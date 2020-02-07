@@ -1,0 +1,63 @@
+Excercise 1.1
+
+Take a look at the gps.py file in the PAIP tools and answer the following questions:
+
+Is the GPS problem solver implemented as a class or as a function? 
+    function
+
+The solver requires initial states, goal states and operators. Of what type are these objects?
+    lists
+
+Is the mechanism recursive? If so, how does it implement its recursion? 
+    achieve_all calls achieve which calls apply_operator which calls achieve_all
+
+If you haven’t already done so, create your own course repo (again, see the guide), and create your own package for lab 1 (cs344/lab01).
+Copy monkeys.py into your new package, and get it to run. Then answer the following questions:
+
+What famous puzzle does this code model and what are the rules of that puzzle? Does the code faithfully implement the puzzle?
+how a monkey eats bananas when it start holding a ball.
+
+A monkey is in a room. Suspended from the ceiling is a bunch of bananas, beyond the monkey's reach. However, in the room there are also a chair and a stick. The ceiling is just the right height so that a monkey standing on a chair could knock the bananas down with the stick. The monkey knows how to move around, carry other things around, reach for the bananas, and wave a stick in the air. What is the best sequence of actions for the monkey? --wikipedia
+
+The program faithfully requires that the monkey only hold one object at a time and is too short to originally reach the bananas without standing on the chair.
+
+What components does each domain action specify?
+
+
+How does the GPS mechanism solve the problem? Be prepared to specify this in detail. You can use the logging feature to print a trace of the mechanism’s deliberations.
+
+Trace output
+DEBUG:root:  Achieving: not hungry
+DEBUG:root:  Consider: eat bananas
+DEBUG:root:    Achieving: has bananas
+DEBUG:root:    Consider: grasp bananas
+DEBUG:root:      Achieving: at bananas
+DEBUG:root:      Consider: climb on chair
+DEBUG:root:        Achieving: chair at middle room
+DEBUG:root:        Consider: push chair from door to middle room
+DEBUG:root:          Achieving: chair at door
+DEBUG:root:          Achieving: at door
+DEBUG:root:        Action: push chair from door to middle room
+DEBUG:root:        Achieving: at middle room
+DEBUG:root:        Achieving: on floor
+DEBUG:root:      Action: climb on chair
+DEBUG:root:      Achieving: empty handed
+DEBUG:root:      Consider: drop ball
+DEBUG:root:        Achieving: has ball
+DEBUG:root:      Action: drop ball
+DEBUG:root:    Action: grasp bananas
+DEBUG:root:  Action: eat bananas
+Executing push chair from door to middle room
+Executing climb on chair
+Executing drop ball
+Executing grasp bananas
+Executing eat bananas
+
+
+The code traces through the actions required to achieve no hungry.
+
+Is this code artificially intelligent? If so, which definition (or definitions) of AI from the text does it satisfy?
+Not particularly. The code manages to compute the actions required to eat the bananas, but has no larger ability to work on general problems. However, it is able to provide (basic) rational actions to succeed at the simple problem.
+
+Would a monkey who/that solves the problem in the real world be displaying intelligence?
+I mean of a certain level. What level of intelligence is required? My dog can hide and refind toys, but I'm not sure whether that counts as intelligence.
