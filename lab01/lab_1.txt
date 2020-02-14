@@ -22,7 +22,7 @@ A monkey is in a room. Suspended from the ceiling is a bunch of bananas, beyond 
 The program faithfully requires that the monkey only hold one object at a time and is too short to originally reach the bananas without standing on the chair.
 
 What components does each domain action specify?
-
+The conditions for each action the monkey can take. For example, to climb on the chair, the monkey most be in the middle of the room with the chair in the middle of the room, and the monkey most be on the floor. Also, the domain actions delete old no longer valid conditions and add new true world conditions.
 
 How does the GPS mechanism solve the problem? Be prepared to specify this in detail. You can use the logging feature to print a trace of the mechanism’s deliberations.
 

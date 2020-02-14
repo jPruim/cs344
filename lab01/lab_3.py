@@ -1,13 +1,16 @@
 from gps import gps
 
 problem = {
-    "start1": ["space on a", "a on b", "b on c", "c on table", "space on table"],
-    "finish1": ["space on c", "c on b", "b on a", "a on table", "space on table"],
+    # "start1": ["space on a", "a on b", "b on c", "c on table", "space on table"],
+    # "finish1": ["space on c", "c on b", "b on a", "a on table", "space on table"],
 
     # settings for the Sussman Anamoly, see PAIP, pp. 142. 
-    "sussmanStart": ["space on c", "c on a", "a on table", "b on table", "space on table"],
-    "sussmanFinish": ["space on a", "a on b", "b on c", "c on table", "space on table"],
+    # "sussmanStart": ["space on c", "c on a", "a on table", "b on table", "space on table"],
+    # "sussmanFinish": ["space on a", "a on b", "b on c", "c on table", "space on table"],
 
+    # Excercise 1.3 = same goal as 1.2b but ordered from top down in goals. This causes the program to go on a long tangent with moving a on b, before b is put on c. This makes the solution no longer solvable. Obviously, this is solvable by returning it to the version from 1.2b.
+    "start2": ["space on c", "space on a", "space on b", "a on table","c on table", "b on table", "space on table"],
+    "finish2": ["space on table", "space on a",  "a on b",  "b on c","c on table",],
     "ops": [
         {
             "action": "move a from b to c",
@@ -289,8 +292,9 @@ problem = {
 }
 #
 def main():
-    start = problem['start1']
-    finish = problem['finish1']
+    print("Excercise 1.3")
+    start = problem['start2']
+    finish = problem['finish2']
     ops = problem['ops']
     actionSequence = gps(start, finish, ops)
     if actionSequence is None:
