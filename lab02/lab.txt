@@ -1,0 +1,26 @@
+Excercise 2.1
+
+a) both get the correct answer. Seemingly they both work well for this setup.
+b) I would assume that simulated annealing takes longer, but the difference is unnoticable.
+c) Yes, if the answer is close, that speeds up the hill climbing method, but doesn't necassarily speed up the annealing method.
+d) Decreasing the delta causes the hill climbing method to have to go through more values to reach the maximum in this case, but can also stop the program from skipping the correct value (or over a valley). Decreasing the delta causes the annealing method to have to drift less from the initial value.
+e) exp_schedule() method allows the program to randomly occasionall except worse solutions.
+
+Excercise 2.2
+
+a) Both of the programs have highly variable answers; however, generally the annealing method does significantly better.
+b) The start value makes a significant differece because the hill climbing method will never go beyond the nearest local maximum, and the annealing method is less likely to move a significant distance away through all the low values, but might travel through a few.
+c) If delta gets big enough, then the hill climbing method can make progress, but generally, it won't help to decrease the step size in this situation. For both, there are certain values for delta that significantly change how the program runs. For example pi. These values interact with the shape of the graph to be able to skip around. I noticed that annealing does better when delta is greater. This is because it increases the chance for annealing to manage to escape the local maximum.
+d) There is no maximum value for this problem. The highest I got was over 3000 with a delta of pi by hill climbing. When I entered a delta over pi * 10^8, then ofcourse I got ridiculusly huge answers out. 
+
+Excercise 2.3
+
+a) The random restarting seems to help both. However, annealing now "always" has a better maximum.
+b) with a delta of 1.8, 29.7 for hill_climbing, and 54 for annealing. This is caused by the initial value being bounded in [0,30]. Annealing cheats and skips outside the range.
+c) annealing does better because there are enough trials, that one of them will get lucky and jump across more local     minimums and get better answers.
+
+Excercise 2.4
+
+a) hill_climbing. This will allow the program to find many different starting points, and hopefully, it will allow the program to have one value that is close to the "global" maximum (if you assumed that the max was at 30). Hill climbing would improve to almost always get 30 (or very close to it). 
+b) For this program over a 100 easily.
+c) It is barely different from random restarts. Random restarts is just going for each local beam search initial value sequentially. However, in beam search, there can be more cross communication.
