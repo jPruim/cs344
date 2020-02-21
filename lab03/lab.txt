@@ -1,0 +1,46 @@
+Exercise 3.1
+
+a) The only program to work in a timely manner on all the puzzles is back tracking search. The others are all time consuming. I got AC3 to work on the simple puzzles quickly but not on the hard ones. (min conflict always failed, dfs takes too long) This was done with the extra parameters for back tracking search. Without the new parameters, the program takes too long to get doen well.
+b) 
+    i) Inference forward checking helps significantly on the easy problem (no benefit (and probable detriment) from the other parameter). So I would assume that it doesn't help.
+    ii) Forward checking should help to find errors sooner, rather than waiting until all squares are filled to see fallacy (two threes in a square). MRV should help as it tries to implement the values with the fewest options first.
+    From toronto.edu : FC is about 100 times faster, FC and MRV is about 10000 times faster.
+
+
+
+Exercise 3.2
+
+a) for really fast solutions
+    AC3) doesn't work at 1. So none of them?
+    back) 17
+    Min) 1000 -ish depends on how long "instant solution can be"
+b) Highest n w/ fast solution
+    mrv only) 47
+    forward only) 25
+    both) 170
+    Both help as it is better to fill the rows with fewer options first as it leads to faster erroring on incorrect solutions. Forward checking also doesn't allow queens to be placed in automatically going to error locations.
+c) around 97, Takes many different attempts to backtrack and shuffle queens to find the solution (also the number is    highly variable)
+
+
+Exercise 3.3
+
+a) CSP only cares about the end state. Thus, it is defined by:
+        vars        A list of variables; each is atomic (e.g. int or string).
+        domains     A dict of {var:[possible_value, ...]} entries.
+        neighbors   A dict of {var:[var,...]} that for each variable lists
+                    the other variables that participate in constraints.
+        constraints A function f(A, a, B, b) that returns true if neighbors
+                    A, B satisfy the constraint when they have values A=a, B=b
+
+        Thus "states" could either be seen as an attempted solution or the buildign blocks to get there by some algorithms, but generally isn't verbage used to describe CSP, but the algorithms used to solve CSP.
+        Goal testing is much more important as all that the program must check is whether the solution is a valid solution (not the steps to get there), but it is used in both.
+
+    Traditional
+        S is the set of all possible states;
+        A is the set of possible action, not related to a particular state but regarding all the state space;
+        Action(s) is the function that establish which action is possible to perform in a certain state;
+        Result(s,a) is the function that return the state reached performing action A in state S
+        Cost(s,a) is the cost of performing an action A in state S. In many state spaces is a constant, but this is not true in general.
+
+b)  In CSP there is no equivallent of "Cost". The program tries to be efficient, but there is no need to approximate the cost of an action outside of computation time. Results is used by both algorithms to find the next steps, but isn't really a component of heuritstics. I'd say that the concept of cost in A* is similar to the concept of MRV in backtracking search as both are trying to narrow the state tree by going "in the right" direction at the beginning. I suppose that Forward Checking might have a comparable heuritstics in normal search problems, but it is much more of a is it possible to still solve heuristic and has almost nothing to do with path. Some search problems (those without backtracking), could implement a similar heuristic to speed up the algorithms, but no examples come to mind.
+
