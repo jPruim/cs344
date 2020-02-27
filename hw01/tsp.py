@@ -37,11 +37,13 @@ class TSP(Problem):
         return actions
     
     def goal_test(self, state):
-            """Check to see if each city is visited."""
-            for i in range(self.n):
-                if i not in state:
-                    return False
-            return True
+        """Check to see if each city is visited."""
+        for i in range(self.n):
+            if i not in state:
+                return False
+        print("Goal passed")
+        print(state)
+        return True
 
     def result(self, state, move):
         """Makes the given move on a copy of the given state."""
@@ -53,24 +55,25 @@ class TSP(Problem):
         count = 0
         for i in range(len(state)):
             if i > 0:
-                count-=self.array[state[i]][state[i-1]]
-                count+=self.maximum
+                count -=self.array[state[i]][state[i-1]]
+                count +=self.maximum
             if i == n-1:
                 count -=self.array[state[i]][state[1]]
-                count+=self.maximum
+                count +=self.maximum
         return count
 
 
 if __name__ == '__main__':
-    n = 40
+    n = 10
     # Formulate a problem with a 2D hill function and a single maximum value.
     maximum = 10
-    array = [[0 for x in range(n)] for y in range(n)]
+    array = [[-1 for x in range(n)] for y in range(n)]
     #initialize array.
-    for i in range (0,n):
-        for j in range (0,math.floor(i/2)):
-            array[i][j] = randrange(5,maximum)
-            array[j][i] = array[i][j]  
+    for i in range (0,n): //symetric matrix, all values are overwritten once (had errors in my i/2 flooring math)
+        for j in range (0,n):
+            array[i][j] = randrange(2,maximum)
+            array[j][i] = array[i][j] 
+    print(array) 
     ann_max = -100
     hill_max = -100
     for x in range(1,50):
@@ -92,7 +95,8 @@ if __name__ == '__main__':
         )
         if p.value(annealing_solution) > ann_max:
             ann_max = p.value(annealing_solution)
-        
+    print(hill_solution)
+    print(annealing_solution)    
     print('Hill-climbing max solution value: ' + str(-hill_max+maximum*n)
             )
     print('Simulated annealing max solution value: ' + str(-ann_max+maximum*n)
