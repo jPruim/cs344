@@ -1,0 +1,37 @@
+1.
+Introspection is not a good way to peer into human cognitive processes, but might be the best option that is available. Overall, introspection is plauged by a strong lack of reliability and scientific structure. Most people struggle to even understand their basic thoughts. Introspection also famously leads to the case study problems. Case study problems result in a single person's uniqueness being extrapolated to be normal across a population. Freud is known for having some disturbing views that come from introspection. Overall, psychological functionalism and behaviorism are more useful in understanding the human thought behavior.
+
+However, neither of those describes the process behind thought particularly well. In this small area, that happens to be where AI is interested, is mostly outside the perview of accepted psychology. It is hard to draw conclusive results about how the brain works with the "mind" to create thought. In this case, simplistic introspection might give people an idea, but should definitely still not be taken as accurate. Overall, AI is better suited for mimicking results of human thought and not the way humans think.
+
+2.
+State = list of integers, each integer representing a visited city. You cannot visit the same city again.
+Hill-climbing is significantly better as it doesn't randomly take steps to cities that are costly with no gaurentee that the outcome will be better. This might eventually become less true on enough trials, but the initial city is randomized (but not the distances) so I don't think Simulated Annealing would ever be better.
+
+3.
+Each class needs a time, a room, and a teacher.
+
+Let R give the room of a class from: <nh253,sb382>
+Let T give the time of a class from: <9,10,11,12,13>
+Let P give the professor of a class from: <linden, norman, adams, sherman>
+Thus:
+X = {104,106,108,112,212,214} //cs classes
+C = {[( R(104)!=R(106)&& P(104) !=P(106) ) ||T(104) != T(106)],  //constraints about conflicting classes
+    [( R(104)!=R(108)&& P(104) !=P(108) ) ||T(104) != T(108)],  //constraints about conflicting classes
+    [( R(104)!=R(112)&& P(104) !=P(112) ) ||T(104) != T(112)],  //constraints about conflicting classes
+    [( R(104)!=R(212)&& P(104) !=P(212) ) ||T(104) != T(212)],  //constraints about conflicting classes
+    [( R(104)!=R(214)&& P(104) !=P(214) ) ||T(104) != T(214)],  //constraints about conflicting classes
+    [( R(106)!=R(108)&& P(106) !=P(108) ) ||T(106) != T(108)],  //constraints about conflicting classes
+    [( R(106)!=R(112)&& P(106) !=P(112) ) ||T(106) != T(112)],  //constraints about conflicting classes
+    [( R(106)!=R(212)&& P(106) !=P(212) ) ||T(106) != T(212)],  //constraints about conflicting classes
+    [( R(106)!=R(214)&& P(106) !=P(214) ) ||T(106) != T(214)],  //constraints about conflicting classes
+    [( R(108)!=R(112)&& P(108) !=P(112) ) ||T(108) != T(112)],  //constraints about conflicting classes
+    [( R(108)!=R(212)&& P(108) !=P(212) ) ||T(108) != T(212)],  //constraints about conflicting classes
+    [( R(108)!=R(214)&& P(108) !=P(214) ) ||T(108) != T(214)],  //constraints about conflicting classes
+    [( R(112)!=R(212)&& P(112) !=P(212) ) ||T(112) != T(212)],  //constraints about conflicting classes
+    [( R(112)!=R(214)&& P(112) !=P(214) ) ||T(112) != T(214)],  //constraints about conflicting classes
+    [( R(212)!=R(214)&& P(212) !=P(214) ) ||T(212) != T(214)],  //constraints about conflicting classes
+} //gaurentees that either each pair of classes is at a different time, or that they have a different room and a different professor.
+
+I chose this formulation because it was the most apparent to me. Their is no constraint on how many classes a professor teaches, or how used each classroom/time must be. Thus, the only real constraint is that a class most have a room, and a professor. Thus I gave the constraints of conflicts.
+
+
