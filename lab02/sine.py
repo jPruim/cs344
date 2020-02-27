@@ -40,8 +40,8 @@ if __name__ == '__main__':
 
     # Formulate a problem with a 2D hill function and a single maximum value.
     maximum = 30
-    ann_max = 0;
-    hill_max = 0;
+    ann_max = 0
+    hill_max = 0
     for x in range(0,100):
         initial = randrange(0, maximum)
         p = AbsVariant(initial, maximum, delta=1.8)

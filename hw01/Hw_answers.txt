@@ -15,6 +15,7 @@ Let T give the time of a class from: <9,10,11,12,13>
 Let P give the professor of a class from: <linden, norman, adams, sherman>
 Thus:
 X = {104,106,108,112,212,214} //cs classes each assigned a tuple of room, professor, class.
+D = all combinations of rooms, time, and professors as tuples. However this is of size 2*5*5 or 50. And I hope to not have to write them all out.
 C = {[( R(104)!=R(106)&& P(104) !=P(106) ) ||T(104) != T(106)],  //constraints about conflicting classes
     [( R(104)!=R(108)&& P(104) !=P(108) ) ||T(104) != T(108)],  //constraints about conflicting classes
     [( R(104)!=R(112)&& P(104) !=P(112) ) ||T(104) != T(112)],  //constraints about conflicting classes
