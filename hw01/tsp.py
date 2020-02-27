@@ -55,6 +55,9 @@ class TSP(Problem):
             if i > 0:
                 count-=self.array[state[i]][state[i-1]]
                 count+=self.maximum
+            if i == n-1:
+                count -=self.array[state[i]][state[1]]
+                count+=self.maximum
         return count
 
 
