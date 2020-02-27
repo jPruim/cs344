@@ -69,7 +69,7 @@ if __name__ == '__main__':
     maximum = 10
     array = [[-1 for x in range(n)] for y in range(n)]
     #initialize array.
-    for i in range (0,n): //symetric matrix, all values are overwritten once (had errors in my i/2 flooring math)
+    for i in range (0,n): #symetric matrix, all values are overwritten once (had errors in my i/2 flooring math)
         for j in range (0,n):
             array[i][j] = randrange(2,maximum)
             array[j][i] = array[i][j] 
