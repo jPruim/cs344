@@ -7,6 +7,9 @@ Print the rank (i.e., number of axes/dimensions), shape and data type of the exa
 by Jason Pruim for Calvin University, Spring 2020, CS344
 
 """
+import sys
+sys.path.insert(0,"/home/jrp27/Documents/cs344-code/tools/aima")
+sys.path.insert(0,"/home/jrp27/Documents/cs344-code/tools/paip")
 import numpy
 from keras.datasets import boston_housing
 (train_images, train_labels), (test_images, test_labels) = boston_housing.load_data()
