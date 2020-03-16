@@ -1,0 +1,30 @@
+Compute the information gain provided by the “Hungry?“ question from the restaurant domain. Use this restaurant data (AIMA, Figure 18.3). Would this question be better than either of the questions discussed in class (i.e., “Patrons?”, “Type?”?
+
+Hungry:
+Yes:7
+    Wait?
+        Y:5
+        N:2
+
+    Entropy =  -( 5/7*ln(5/7)+2/7*ln(2/7) ) =0.598
+No:5
+    Wait?
+        Y:1
+        N:4
+    
+    Entropy = - ( 1/5 * ln(1/5)+ 4/5*ln(4/5)) = 0.5
+
+Avg Entropy after Hungry:
+    7/12*0.598+5/12*0.5 = 0.557
+Entropy before is 1 (perfectly balanced boolean)
+thus Gain = 1-0.557 = 0.443
+
+Info gain from patrons is .541
+
+Thus Patrons does better at approaching the required information faster (will wait).
+However, Type gives no information about the situation. Thus, the Gain = 0. And therefore anything (including hungry) is atleast as good of a question.
+
+
+
+
+

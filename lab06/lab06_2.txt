@@ -1,0 +1,48 @@
+
+1) Model goal
+We want the machine model
+    To successfully identify spam based on text, title, subject line, etc.
+
+2) ideal outcome
+The ideal outcome is that people don't have to read spam (unwanted emails), but also don't loose their desired emails to the spam filter. Idealy, users no longer see spam and never go and search through the spam filter.
+
+3) Success metricsSucces matrix is successfully filter 70% of never opened emails out of the inbox (only 30% of emails in inbox unread), and only filtering 1% of emails retrieved from spam
+
+3) KR:
+correlations between certain words and spam. E.g. spam, prince, diamonds etc.
+Correlations between formatting and spam. Percentage of capital letters, red text, etc.
+Both to be measured from datasets that are preentered with spam tags.
+
+3) Failure
+Our model is deemed a failure if the user deletes too many emails from inbox without reading (>30%), or if the user spends time digging out of spam (>1% in spam).
+
+
+4)Output
+The output of the model will be likely spam or likely not spam
+Based on training data (either from a current spam folder and inbox, or just manual tagging)
+
+5) Using the output
+likely spam should be put directly in the spam folder.
+likely not spam should be left to the inbox.
+
+
+6)Heuristics
+Likely Spam if contains any
+    "Spam"
+    "diamonds" and "prince"
+    red text
+    >10% capital letters
+    >5% "free" (if 1 in 20 words is the word 'free')
+else likely not spam
+
+7)
+Our problem is best described as Binary Classification. (likely spam and likely not spam)
+
+8)
+take in data about red text, "spam", "diamonds", capitals letters, "free",
+
+9)
+All of these data inputs would be found from parsing the text file (don't really know how to get red text from that though. I assume it is findable from the file somewhere?)
+
+10)
+I would choose "spam", "free" and red text as my three initial inputs.
