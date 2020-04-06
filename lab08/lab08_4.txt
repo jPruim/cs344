@@ -1,0 +1,11 @@
+1)
+k-fold validation allows for the different validation and testing sets to be done in parallel. Thus allowing all the dataset to be fit and compared to the rest of the dataset for validation. This is a way of "cheating" more data to use as training data.
+
+b)
+The problematic feed would probably have to do with adjusting the parameters of fitting relavance to each of the varying ranges. It would be interesting for the computer to evaluate each of the parameters as having the same initial weight despite their different ranges without doing its own normalization. I would argue, that it isn't always right to use normalization as not everything is a normal curve dataset (though the average will approximate a normal curve), but that is a different argument.
+
+c)
+I agree. It is hard to pursue a perfect fitting algorithm on small datasets. Its similar to fitting a dataset of 7 points with a 6th degree polynomial rather than a line. Of course the 6th degree polynomial will perfectly fit the data (it most unless 2 data points are directly on top of eachother), but it doesn't actually give a summary of the system behind the fitting. This is why fitting is almost always done with the simplest acceptable functions. 
+
+d)
+I don't think having more layers helps in the long run for fitting. However, more layers does allow for a better fit at the cost of overfitting. The same benefit can be seen from making the layers wider.

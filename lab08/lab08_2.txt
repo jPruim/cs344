@@ -1,0 +1,34 @@
+a)
+Person correlation coefficient: is a measure of the linear correlation between two variables X and Y. According to the Cauchy–Schwarz inequality it has a value between +1 and −1, where 1 is total positive linear correlation, 0 is no linear correlation, and −1 is total negative linear correlation. It is widely used in the sciences.
+from wikipedia
+
+b)
+I chose median income and rooms per person as they seemed to be the only corraleted data values.
+train_model(
+    learning_rate=0.05,
+    steps=500,
+    batch_size=10,
+    training_examples=minimal_training_examples,
+    training_targets=training_targets,
+    validation_examples=minimal_validation_examples,
+    validation_targets=validation_targets)
+Training model...
+RMSE (on training data):
+  period 00 : 181.47
+  period 01 : 131.31
+  period 02 : 95.54
+  period 03 : 84.70
+  period 04 : 84.59
+  period 05 : 84.62
+  period 06 : 84.48
+  period 07 : 84.39
+  period 08 : 84.42
+
+to edit the lattitude:
+
+def edit(df):
+    newDF = pd.DataFrame()
+    newDF["relative_latt_to_38] = df[lattitude].apply(lamda x: max(x-38,38-x) )
+    newDF["median_income"] = df["median_income"]
+    return newDF
+    
