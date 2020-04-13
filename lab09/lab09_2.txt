@@ -1,0 +1,18 @@
+Questions:
+
+Why are we regularizing with respect to sparsity? 
+This accounts for the number of 0's in the data or the machine code. This can deal with some parameters that don't actually affect anything. 
+How does L1 regularization increase sparsity?
+Thus, when penalizing a model using the l2 norm, it is highly unlikely that anything will ever be set to zero, since the reduction in l2 norm going from ε to 0 is almost nonexistent when ε is small. On the other hand, the reduction in l1 norm is always equal to δ, regardless of the quantity being penalized.
+---https://stats.stackexchange.com/questions/45643/why-l1-norm-for-sparse-models
+
+Task 1: Here, just report the best log loss value / model size you can get and what gamma value you used to get them.
+period 06 : 0.24
+Model training finished.
+Model size: 794
+
+
+With 0.8
+period 06 : 0.25
+Model training finished.
+Model size: 577

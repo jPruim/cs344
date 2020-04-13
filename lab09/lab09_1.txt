@@ -1,0 +1,18 @@
+How effective is the linear regression approach to the problem?
+If I am reading the histogram correctly, it does quite horribly, but it is very hard to figure out what it is showing.
+
+
+Task 1: Compare and contrast L2 Loss vs LogLoss.
+L2 loss is a linear? relation of being off on propability in comparison to answers in how it evaluates much to adjust for incorrect answers. Logloss is a way of penalizing more confidence in an incorrect answer and thereby it helps fit binary modeling better.
+
+Task 2: Explain how effective logistic regression is compared with linear regression.
+Logloss had higher values on the graph accross periods; however, it seems to be improving accross the periods unlike the linear model. I'm not sure what the accuracy of scale of the y axis is though. I'd say, that the logloss seems to be adapting better to the data than the L2 model.
+
+
+Task 3: Here, just report the best values you can achieve for AUC/accuracy and what hyperparameters you used to get them.
+
+AUC on the validation set: 0.82
+Accuracy on the validation set: 0.79
+    learning_rate=0.000005,
+    steps=20000,
+    batch_size=700,

@@ -1,0 +1,39 @@
+
+First Change
+model.add(layers.Dense(16, activation='relu', input_shape=(10000,)))
+model.add(layers.Dense(16, activation='relu'))
+model.add(layers.Dense(16, activation='relu'))
+model.add(layers.Dense(1, activation='sigmoid'))
+Results:  0.8727999925613403
+
+Second Change
+model.add(layers.Dense(16, activation='relu', input_shape=(10000,)))
+model.add(layers.Dense(34, activation='relu'))
+model.add(layers.Dense(16, activation='relu'))
+model.add(layers.Dense(1, activation='sigmoid'))
+0.8819199800491333
+
+
+Third:
+model = models.Sequential()
+model.add(layers.Dense(16, activation='relu', input_shape=(10000,)))
+model.add(layers.Dense(34, activation='relu'))
+model.add(layers.Dense(16, activation='relu'))
+model.add(layers.Dense(1, activation='sigmoid'))
+
+model.compile(optimizer='rmsprop',
+              loss='mse',
+              metrics=['accuracy'])
+0.8702800273895264
+
+Thus MSE does a worse job than binary cross entropy
+
+model.add(layers.Dense(16, activation='tanh', input_shape=(10000,)))
+model.add(layers.Dense(34, activation='tanh'))
+model.add(layers.Dense(16, activation='tanh'))
+model.add(layers.Dense(1, activation='sigmoid'))
+0.8766000270843506
+
+mediocre change.
+
+Seems that the best results is just relu with more layers and nodes. This isn't surprising as relu is chosen for the simple calculations and binary results. More nodes and layers will result in better fitting to the training data. This should continue to improve the results until overffitting starts.
