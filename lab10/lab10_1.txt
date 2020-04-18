@@ -1,0 +1,13 @@
+a)
+Definitely keras. It's way simpler and more contained. It would also be easier to debug later.
+
+
+Model training finished.
+Final RMSE (on training data):   236.79
+Final RMSE (on validation data): 236.70
+    learning_rate=0.001,
+    steps=500,
+    batch_size=50,
+
+Final RMSE (on test data): 234.53
+interesting that it is better on test?

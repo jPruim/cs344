@@ -1,0 +1,35 @@
+The key insight of Adagrad is that it modifies the learning rate adaptively for each coefficient in a model, monotonically lowering the effective learning rate. This works great for convex problems, but isn't always ideal for the non-convex problem Neural Net training. ---Google Tutorial
+
+
+Task 0:
+my_optimizer=tf.train.GradientDescentOptimizer(learning_rate=0.007),
+    steps=1000,
+    batch_size=50,
+    hidden_units=[10, 10],
+Final RMSE (on training data):   74.50
+Final RMSE (on validation data): 72.03
+
+Task 1:
+my_optimizer=tf.train.AdagradOptimizer(learning_rate=0.1),
+    steps=500,
+    batch_size=100,
+    hidden_units=[10, 10],
+
+Final RMSE (on training data):   70.43
+Final RMSE (on validation data): 68.65
+
+Task 2:
+    my_optimizer=tf.train.AdamOptimizer(learning_rate=0.01),
+    steps=500,
+    batch_size=100,
+    hidden_units=[10, 10],
+Final RMSE (on training data):   70.34
+Final RMSE (on validation data): 68.96
+
+Task 3:
+    my_optimizer=tf.train.AdagradOptimizer(learning_rate=0.1),
+    steps=500,
+    batch_size=100,
+    hidden_units=[10, 10]
+Final RMSE (on training data):   70.79
+Final RMSE (on validation data): 68.64
