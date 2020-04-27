@@ -1,0 +1,35 @@
+Task 1: Is a linear model ever preferable to a deep NN model? It trains faster and can be useful in areas where the possible inputs is severely limited.
+Task 2: Does the NN model do better than the linear model?
+Accuracy of linear model is 0.78.
+Accuracy of the DNN is 0.88.
+Thus I'd say it does significantly better.
+Task 3: Do embeddings do much good for sentiment analysis tasks?
+Accuracy = 0.779, so no.
+Tasks 4–5: Name two words that have similar embeddings and explain why that makes sense.
+enjoyable and liked are in the same spot. This makes since because they both mean relatively the same thing in terms of movies.
+People tend to like the movies that they enjoyed watching.
+
+Task 6: Report your best hyper-parameters and their resulting performance.
+
+# Create a feature column from "terms", using a full vocabulary file.
+informative_terms = None
+with io.open(terms_path, 'r', encoding='utf8') as f:
+  # Convert it to a set first to remove duplicates.
+  informative_terms = list(set(f.read().split()))
+  
+terms_feature_column = tf.feature_column.categorical_column_with_vocabulary_list(key="terms", 
+                                                                                 vocabulary_list=informative_terms)
+
+terms_embedding_column = tf.feature_column.embedding_column(terms_feature_column, dimension=2)
+feature_columns = [ terms_embedding_column ]
+
+my_optimizer = tf.train.AdagradOptimizer(learning_rate=0.2)
+my_optimizer = tf.contrib.estimator.clip_gradients_by_norm(my_optimizer, 5.0)
+
+classifier = tf.estimator.DNNClassifier(
+  feature_columns=feature_columns,
+  hidden_units=[20,10],
+  optimizer=my_optimizer
+)
+
+accuracy 0.74832

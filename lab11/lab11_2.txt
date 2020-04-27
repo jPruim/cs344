@@ -1,0 +1,15 @@
+Task #1 — What are the biases present in the given dataset?
+Way more men in the data set. More private sector workers.
+From the 
+
+Task #2 — Assess the potential bias in some other feature besides education level.
+I looked at Gender with sorting by income_bracket.
+It becomes clear that the number of low income men and women are about equal, but the high income bracket is heavily male favored.
+So high income women are underrepresented (or just much more rare in real life).
+I am not sure what is over generalized here? Some would argue that binary gender is a problem.
+So I'd say that binary gender should probably be changed due to modern political correctness.
+
+Task #3 — Do as written.
+
+Task #4 — Do you find disparities when you look at race rather than gender? If so, which way to they skew?
+So with race and white (the most common race in the study, which is also worrying) it has way more false negatives than false positives. However, the false positive rate is relatively low (8.7%). The true positive to false negative rate is really bad. This seems to indicate some problems with the model unless it was designed to do this.
