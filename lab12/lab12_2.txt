@@ -1,0 +1,13 @@
+1. on(a,b)
+2. on(b,c)
+3. under(table,c)
+4. on(x,y) ->Above(x,y)
+5. under(y,x)->on(x,y)
+6. above(x,y) && above(y,z) -> above(x,z)
+-------------------------
+7. above(a,b) from 1,4
+8. above(b,c) from 2,4
+9. above(a,c) from 7,8,6
+10. on(c,table) from 3,5
+11. above(c,table) from 10,4
+12. above(a,table) from 9,11,6
